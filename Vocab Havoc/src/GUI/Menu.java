@@ -1,5 +1,10 @@
 package GUI;
 
+import java.awt.Dimension;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 /**
  *
  * @author Arjay
@@ -11,6 +16,13 @@ public class Menu extends javax.swing.JFrame {
      */
     public Menu() {
         initComponents();
+        this.setSize(500, 740);
+        setResizable(false);
+        setLayout(null);
+        background.setIcon(new ImageIcon(new ImageIcon("src/Images/Background.png").getImage().
+                        getScaledInstance(500, 700, Image.SCALE_DEFAULT)));
+        
+        
     }
 
     /**
@@ -22,17 +34,187 @@ public class Menu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Main = new javax.swing.JPanel();
+        BackgroundPanel = new javax.swing.JPanel();
+        Title = new javax.swing.JPanel();
+        title = new javax.swing.JLabel();
+        Frenzy = new javax.swing.JPanel();
+        frenzyBttn = new javax.swing.JButton();
+        Zen = new javax.swing.JPanel();
+        zenBttn = new javax.swing.JButton();
+        TimeAttack = new javax.swing.JPanel();
+        tAttackBttn = new javax.swing.JButton();
+        background = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+
+        BackgroundPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        Title.setBackground(new java.awt.Color(255, 255, 255));
+
+        title.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/VocabHavoc.png"))); // NOI18N
+
+        javax.swing.GroupLayout TitleLayout = new javax.swing.GroupLayout(Title);
+        Title.setLayout(TitleLayout);
+        TitleLayout.setHorizontalGroup(
+            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TitleLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        TitleLayout.setVerticalGroup(
+            TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 162, Short.MAX_VALUE)
+            .addGroup(TitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TitleLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(title)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        Frenzy.setBackground(new java.awt.Color(255, 255, 255));
+
+        frenzyBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FrenzyBttn.png"))); // NOI18N
+
+        javax.swing.GroupLayout FrenzyLayout = new javax.swing.GroupLayout(Frenzy);
+        Frenzy.setLayout(FrenzyLayout);
+        FrenzyLayout.setHorizontalGroup(
+            FrenzyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(FrenzyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(FrenzyLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(frenzyBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        FrenzyLayout.setVerticalGroup(
+            FrenzyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(FrenzyLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(FrenzyLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(frenzyBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        Zen.setBackground(new java.awt.Color(255, 255, 255));
+
+        zenBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/ZenBttn.png"))); // NOI18N
+
+        javax.swing.GroupLayout ZenLayout = new javax.swing.GroupLayout(Zen);
+        Zen.setLayout(ZenLayout);
+        ZenLayout.setHorizontalGroup(
+            ZenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 309, Short.MAX_VALUE)
+            .addGroup(ZenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ZenLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(zenBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        ZenLayout.setVerticalGroup(
+            ZenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(ZenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ZenLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(zenBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        TimeAttack.setBackground(new java.awt.Color(255, 255, 255));
+
+        tAttackBttn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/TimeAttackBttn.png"))); // NOI18N
+
+        javax.swing.GroupLayout TimeAttackLayout = new javax.swing.GroupLayout(TimeAttack);
+        TimeAttack.setLayout(TimeAttackLayout);
+        TimeAttackLayout.setHorizontalGroup(
+            TimeAttackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(TimeAttackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TimeAttackLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(tAttackBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+        TimeAttackLayout.setVerticalGroup(
+            TimeAttackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+            .addGroup(TimeAttackLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TimeAttackLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(tAttackBttn, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        background.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Background.png"))); // NOI18N
+
+        javax.swing.GroupLayout BackgroundPanelLayout = new javax.swing.GroupLayout(BackgroundPanel);
+        BackgroundPanel.setLayout(BackgroundPanelLayout);
+        BackgroundPanelLayout.setHorizontalGroup(
+            BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Frenzy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TimeAttack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Zen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(62, Short.MAX_VALUE))
+            .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                    .addComponent(background)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        BackgroundPanelLayout.setVerticalGroup(
+            BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(BackgroundPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Title, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Frenzy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Zen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TimeAttack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(112, Short.MAX_VALUE))
+            .addGroup(BackgroundPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout MainLayout = new javax.swing.GroupLayout(Main);
+        Main.setLayout(MainLayout);
+        MainLayout.setHorizontalGroup(
+            MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainLayout.createSequentialGroup()
+                .addComponent(BackgroundPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        MainLayout.setVerticalGroup(
+            MainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainLayout.createSequentialGroup()
+                .addComponent(BackgroundPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(Main, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -74,5 +256,16 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel BackgroundPanel;
+    private javax.swing.JPanel Frenzy;
+    private javax.swing.JPanel Main;
+    private javax.swing.JPanel TimeAttack;
+    private javax.swing.JPanel Title;
+    private javax.swing.JPanel Zen;
+    private javax.swing.JLabel background;
+    private javax.swing.JButton frenzyBttn;
+    private javax.swing.JButton tAttackBttn;
+    private javax.swing.JLabel title;
+    private javax.swing.JButton zenBttn;
     // End of variables declaration//GEN-END:variables
 }
