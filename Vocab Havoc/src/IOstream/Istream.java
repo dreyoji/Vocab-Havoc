@@ -98,6 +98,11 @@ public class Istream {
         // where is the start of the frenzy scores?
         int scoreStartIndex = getWordEnclosedIndex(leaderboard, mode.toUpperCase(), '[', ']');
         
+        if (scoreStartIndex + 1 == leaderboard.length() || leaderboard.charAt(scoreStartIndex + 1) == '[') {
+            System.out.println("there are no scores yet in this mode");
+            return null;
+        }
+        
         // find nth score
         // each score is enclosed in a newline
         int openNewline = 0;
@@ -139,8 +144,8 @@ public class Istream {
         // this part will never be reached if the closing newline is not found
         String score = leaderboard.substring(openNewline, closeNewline);
         
-        if (score.equals("[TIME ATTACK]")) {
-            System.out.println("there are no scores yet in this mode");
+        if (score.charAt(0) == '[') {
+            System.out.println("there is not score at that position");
             return null;
         }
         
