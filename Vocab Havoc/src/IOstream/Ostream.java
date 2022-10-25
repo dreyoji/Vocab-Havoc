@@ -68,4 +68,5 @@ public class Ostream {
             System.out.println("failed to save score :(");
         }
     }
+    
 }

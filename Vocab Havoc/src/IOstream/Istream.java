@@ -132,19 +132,18 @@ public class Istream {
             }
         }
         if (!closeNewlineFound) {
-            System.out.println("save file invalid :( or method parameters are wrong :(");
+            System.out.println("save file invalid :( or method parameters are wrong :( or there are no scores yet in this mode");
             return null;
         }
-        
-        // if there are no scores
-        if (openNewline - 1 == getWordEnclosedIndex(leaderboard, mode.toUpperCase(), '[', ']')) {
-            System.out.println("there are no scores yet in this game mode.");
-            return null;
-        }
-        
         
         // this part will never be reached if the closing newline is not found
         String score = leaderboard.substring(openNewline, closeNewline);
+        
+        if (score.equals("[TIME ATTACK]")) {
+            System.out.println("there are no scores yet in this mode");
+            return null;
+        }
+        
         String[] scoreArray = score.split(",");
         
         return scoreArray;
