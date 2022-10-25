@@ -30,13 +30,21 @@ public class Ostream {
         fw.close();
     }
     
-    public static void saveScoreFrenzy(String name, int wordsGuessed, String time) {
-        String scoreString = "\n" + name + "," + Integer.toString(wordsGuessed) + "/5," + time;
+    protected static String numToTime(int num) {
+        int sec = num % 60;
+        int min = num / 60;
+        
+        String time = String.format("%02d:%02d", min, sec);
+        return time;
+    }
+    
+    public static void saveScoreFrenzy(String name, int wordsGuessed, int time) {
+        String scoreString = "\n" + name + "," + Integer.toString(wordsGuessed) + "/5," + numToTime(time);
         saveScore(scoreString, "FRENZY");
     }
     
-    public static void saveScoreTimeAttack(String name, String time) {
-        String scoreString = "\n" + name + "," + time;
+    public static void saveScoreTimeAttack(String name, int time) {
+        String scoreString = "\n" + name + "," + numToTime(time);
         saveScore(scoreString, "TIME ATTACK");
     }
     
@@ -68,5 +76,4 @@ public class Ostream {
             System.out.println("failed to save score :(");
         }
     }
-    
 }
