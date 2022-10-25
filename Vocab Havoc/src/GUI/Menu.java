@@ -59,7 +59,6 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 610, 90, 80));
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/exit.png"))); // NOI18N
-        jButton6.setActionCommand("");
         jButton6.setBorder(null);
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, -1, -1));
 
