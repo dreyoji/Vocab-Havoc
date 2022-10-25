@@ -31,7 +31,7 @@ public class Ostream {
     }
     
     public static void saveScoreFrenzy(String name, int wordsGuessed, String time) {
-        String scoreString = "\n" + name + "," + Integer.toString(wordsGuessed) + "," + time;
+        String scoreString = "\n" + name + "," + Integer.toString(wordsGuessed) + "/5," + time;
         saveScore(scoreString, "FRENZY");
     }
     
@@ -50,7 +50,7 @@ public class Ostream {
             return;
         }
 
-        int startIndex = Istream.getWordInBracketsIndex(leaderboard, mode);
+        int startIndex = Istream.getWordEnclosedIndex(leaderboard, mode, '[', ']');
         
         // we will append the new scores here
         String startOfScores = leaderboard.substring(0, startIndex);
