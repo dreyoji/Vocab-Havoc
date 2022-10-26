@@ -106,14 +106,15 @@ public class Istream {
         try {
             leaderboard = fileToString(leaderboardPath);
         } catch (IOException ex) {
-            System.out.println("file not found :(");
+            //System.out.println("file not found :(");
+            return null;
         }
         
         // where is the start of the frenzy scores?
         int scoreStartIndex = getWordEnclosedIndex(leaderboard, mode.toUpperCase(), '[', ']');
         
         if (scoreStartIndex + 1 == leaderboard.length() || leaderboard.charAt(scoreStartIndex + 1) == '[') {
-            System.out.println("there are no scores yet in this mode");
+            //System.out.println("there are no scores yet in this mode");
             return null;
         }
         
@@ -136,7 +137,7 @@ public class Istream {
             }
         }
         if (!openNewlineFound) {
-            System.out.println("save file invalid :( or parameters are wrong :(");
+            //System.out.println("save file invalid :( or parameters are wrong :(");
             return null;
         }
 
@@ -151,7 +152,7 @@ public class Istream {
             }
         }
         if (!closeNewlineFound) {
-            System.out.println("save file invalid :( or method parameters are wrong :( or there are no scores yet in this mode");
+            //System.out.println("save file invalid :( or method parameters are wrong :( or there are no scores yet in this mode");
             return null;
         }
         
@@ -159,7 +160,7 @@ public class Istream {
         String score = leaderboard.substring(openNewline, closeNewline);
         
         if (score.charAt(0) == '[') {
-            System.out.println("there is not score at that position");
+            //System.out.println("there is not score at that position");
             return null;
         }
         
