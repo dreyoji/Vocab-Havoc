@@ -2,20 +2,20 @@
 Everything in the IOstream package is meant for reading and writing scores to the leaderboard (stored in savedata/leaderboard.txt). 
 ## `Ostream` class
 The Ostream class contains all the methods concerned with writing to the leaderboard. The only methods you have access to are the `saveScoreFrenzy` and `saveScoreTimeAttack` methods.
-### `saveScoreFrenzy(String name, int wordsGuessed, String time)`
+### `saveScoreFrenzy(String name, int wordsGuessed, int time)`
 * saves a frenzy score to the leaderboard
 * PARAMETERS:
 	* `String name`
 		* the name of the player
 	* `int wordsGuessed`
 		* the number of words guessed correctly
-	* `String time`
-		* the time in `mm:ss` format
+	* `int time`
+		* the time in seconds
 * EXAMPLE:
 ```java
-saveScoreFrenzy("luis", 4, "00:23");
-saveScoreFrenzy("jek", 5, "01:01");
-saveScoreFrenzy("erin", 5, "01:23");
+saveScoreFrenzy("luis", 4, 23);
+saveScoreFrenzy("jek", 5, 61);
+saveScoreFrenzy("erin", 5, 83);
 ```
 ```
 // leaderboard.txt
@@ -25,17 +25,17 @@ jek,5/5,01:01
 erin,5/5,01:23
 [TIME ATTACK]
 ```
-### `saveScoreTimeAttack(String name, String time)`
+### `saveScoreTimeAttack(String name, int time)`
 * saves a time attack score to the leaderboard
 * PARAMETERS:
 	* `String name`
 		* the name of the player
-	* `String time`
-		* the time in `mm:ss` format
+	* `int time`
+		* the time in seconds
 * EXAMPLE:
 ```java
-saveScoreTimeAttack("ryoji", "01:14");
-saveScoreFrenzy("arjay", "00:47");
+saveScoreTimeAttack("ryoji", 74);
+saveScoreFrenzy("arjay", 47);
 ```
 ```
 // leaderboard.txt
