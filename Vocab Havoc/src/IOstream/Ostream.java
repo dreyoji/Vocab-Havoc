@@ -24,7 +24,7 @@ import java.util.logging.Logger;
  * 
  */
 public class Ostream {
-    static String path = "savedata/leaderboard.txt";
+    static String path = "data/leaderboard.txt";
     
     protected static void stringToFile(String data, String path) throws IOException {
         File leaderboard = new File(path);
@@ -49,7 +49,8 @@ public class Ostream {
     
     public static void saveScoreTimeAttack(String name, int time) {
         String scoreString = "\n" + name + "," + numToTime(time);
-        //saveScore(scoreString, "TIME ATTACK");
+        float finalScore = getFinalScoreTimeAttack(time);
+        saveScore(scoreString, "TIME ATTACK", finalScore);
     }
     
     protected static float getFinalScoreFrenzy(int wordsGuessed, int time) {
@@ -58,6 +59,10 @@ public class Ostream {
         float finalScore = (timeScore + wordScore) * 10;        
         
         return finalScore;
+    }
+    
+    protected static float getFinalScoreTimeAttack(int time) {
+        return 100.f/time;
     }
     
     protected static float getFinalScoreFromString(String score, String mode) {
@@ -83,7 +88,12 @@ public class Ostream {
             } break;
             
             case "TIME ATTACK": {
-                // smth
+                
+                int min = Integer.parseInt(scores[1].substring(0, 2));
+                int sec = Integer.parseInt(scores[1].substring(3, 5));
+                int time = (min * 60) + sec;
+
+                finalScore = getFinalScoreTimeAttack(time);
             } break;
         }
         
@@ -137,14 +147,24 @@ public class Ostream {
         }
 
         int startIndex = Istream.getWordEnclosedIndex(leaderboard, mode, '[', ']');
+        int rank = getRank(finalScore, mode);
+        int newlinesFound = 0;
+        int appendIndex = 0;
+        for (int i = startIndex; i < leaderboard.length(); i++) {
+            if (leaderboard.charAt(i) == '\n') {
+                newlinesFound++;
+                if (newlinesFound == rank) {
+                    appendIndex = i;
+                    break;
+                }
+            }
+        }
         
         // we will append the new scores here
-        String startOfScores = leaderboard.substring(0, startIndex);
-        // get nth newline from startIndex
-        int rank = getRank(finalScore, mode);
+        String startOfScores = leaderboard.substring(0, appendIndex);
         
         // and then concat it with the rest of the string
-        String everythingElse = leaderboard.substring(startIndex);
+        String everythingElse = leaderboard.substring(appendIndex);
     
         startOfScores += scoreString;
         leaderboard = startOfScores + everythingElse;
@@ -156,8 +176,4 @@ public class Ostream {
             System.out.println("failed to save score :(");
         }
     }
-    
-    public static void main(String[] args) {
-        System.out.println(getRank(56.5f, "FRENZY"));
-     }
 }
