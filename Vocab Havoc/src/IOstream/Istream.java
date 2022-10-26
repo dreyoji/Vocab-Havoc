@@ -4,6 +4,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,8 +24,9 @@ import java.util.ArrayList;
  * 
  */
 public class Istream {
-    static String path = "savedata/leaderboard.txt";
-
+    static String leaderboardPath = "data/leaderboard.txt";
+    static String wordsListPath = "data/words.txt";
+    
     protected static String fileToString(String path) throws FileNotFoundException, IOException {
         FileReader fr; 
         fr = new FileReader(path);
@@ -85,12 +89,22 @@ public class Istream {
         return closeBracketIndex + 1;
     }
     
+    public static String[] getWords() {
+        try {
+            return fileToString(wordsListPath).split("\n");
+        } catch (IOException ex) {
+            Logger.getLogger(Istream.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        return null;
+    }
+    
     // n is what position it is in the scores list, starting from 1 (not 0!!!!!!)
     public static String[] getScore(int scorePosition, String mode) { 
         // import file as string so its easier to deal with
         String leaderboard = "";
         try {
-            leaderboard = fileToString(path);
+            leaderboard = fileToString(leaderboardPath);
         } catch (IOException ex) {
             System.out.println("file not found :(");
         }
