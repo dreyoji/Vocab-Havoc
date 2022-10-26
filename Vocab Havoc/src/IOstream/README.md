@@ -2,20 +2,20 @@
 Everything in the IOstream package is meant for reading and writing scores to the leaderboard (stored in savedata/leaderboard.txt). 
 ## `Ostream` class
 The Ostream class contains all the methods concerned with writing to the leaderboard. The only methods you have access to are the `saveScoreFrenzy` and `saveScoreTimeAttack` methods.
-### `saveScoreFrenzy(String name, int wordsGuessed, int time)`
+### `saveScoreFrenzy(String name, int wordsGuessed, String time)`
 * saves a frenzy score to the leaderboard
 * PARAMETERS:
 	* `String name`
 		* the name of the player
 	* `int wordsGuessed`
 		* the number of words guessed correctly
-	* `int time`
-		* the time in seconds
+	* `String time`
+		* the time in `mm:ss` format
 * EXAMPLE:
 ```java
-saveScoreFrenzy("luis", 4, 23);
-saveScoreFrenzy("jek", 5, 61);
-saveScoreFrenzy("erin", 5, 83);
+saveScoreFrenzy("luis", 4, "00:23");
+saveScoreFrenzy("jek", 5, "01:01");
+saveScoreFrenzy("erin", 5, "01:23");
 ```
 ```
 // leaderboard.txt
@@ -25,17 +25,17 @@ jek,5/5,01:01
 erin,5/5,01:23
 [TIME ATTACK]
 ```
-### `saveScoreTimeAttack(String name, int time)`
+### `saveScoreTimeAttack(String name, String time)`
 * saves a time attack score to the leaderboard
 * PARAMETERS:
 	* `String name`
 		* the name of the player
-	* `int time`
-		* the time seconds
+	* `String time`
+		* the time in `mm:ss` format
 * EXAMPLE:
 ```java
-saveScoreTimeAttack("ryoji", 74);
-saveScoreFrenzy("arjay", 47);
+saveScoreTimeAttack("ryoji", "01:14");
+saveScoreFrenzy("arjay", "00:47");
 ```
 ```
 // leaderboard.txt
@@ -48,7 +48,7 @@ ryoji,01:14
 arjay,00:47
 ```
 ## `Istream` class
-The `Istream` class contains all the methods concerned with reading scores from the leaderboard. You only have access to one method and that is the `getScore` method.
+The `Istream` class contains all the methods concerned with reading scores from the leaderboard. The only methods you have access to are the `getScore` and `getWords` methods.
 ### `getScore(int scorePosition, String mode)`
 * returns the desired score
 * PARAMETERS:
@@ -58,7 +58,7 @@ The `Istream` class contains all the methods concerned with reading scores from 
 	* `String mode`
 		* the game mode of the desired score
 		* the only valid values are `"FRENZY"` and `"TIME ATTACK"` (not case sensitive)
-	- RETURN VALUE
+* RETURN VALUE
 		- returns a `String[]` containing the values of the desired score
 		- if for whatever reason score retrieval fails, the method returns `null`		
 * EXAMPLE:
@@ -86,4 +86,20 @@ String[] score2 getScore(1, "TIME ATTACK");
 // score2 is null because TIME ATTACK doesnt have any scores yet
 
 System.out.println(score1[0]); // NullPointerException
+```
+### `getWords()`
+* returns the entire word list
+* PARAMETERS:
+	* `int scorePosition`
+		* the "position" of the score in the leaderboard STARTING FROM 1 (hindi 0!!!!!!)
+		* pang ilan sya sa list?
+	* `String mode`
+		* the game mode of the desired score
+		* the only valid values are `"FRENZY"` and `"TIME ATTACK"` (not case sensitive)
+* RETURN VALUE
+		- returns a `String[]` containing all the words in the word list
+		- if for whatever reason list retrieval fails, the method returns `null`		
+* EXAMPLE:
+```java
+String[] words = getWords();
 ```
