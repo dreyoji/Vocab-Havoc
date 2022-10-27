@@ -62,7 +62,6 @@ public class Game extends javax.swing.JFrame {
         type = new javax.swing.JLabel();
         min = new javax.swing.JLabel();
         sec = new javax.swing.JLabel();
-        Exit = new javax.swing.JButton();
         titles = new javax.swing.JLabel();
         keyboard = new javax.swing.JPanel();
         A = new javax.swing.JLabel();
@@ -237,15 +236,6 @@ public class Game extends javax.swing.JFrame {
         sec.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sec.setText("00");
         getContentPane().add(sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, -1));
-
-        Exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/exit.png"))); // NOI18N
-        Exit.setBorder(null);
-        Exit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 100));
 
         titles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FrenzyTitle.png"))); // NOI18N
         getContentPane().add(titles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 430, 118));
@@ -552,13 +542,6 @@ public class Game extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ExitActionPerformed
-
     int mouseClickCount = 0;
     String guess = "";
     private void LetterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LetterMouseClicked
@@ -794,7 +777,6 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel C;
     private javax.swing.JLabel D;
     private javax.swing.JLabel E;
-    private javax.swing.JButton Exit;
     private javax.swing.JLabel F;
     private javax.swing.JLabel G;
     private javax.swing.JLabel H;

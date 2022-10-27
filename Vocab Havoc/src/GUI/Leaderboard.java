@@ -113,9 +113,15 @@ public class Leaderboard extends javax.swing.JFrame {
         Frenzy2.setText("Zen");
         getContentPane().add(Frenzy2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jButton1.setText("<");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 20));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 80));
 
         Leaderboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LeaderTitle.png"))); // NOI18N
         getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -187,6 +193,10 @@ public class Leaderboard extends javax.swing.JFrame {
         Information1 Info = new Information1();
         Info.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
