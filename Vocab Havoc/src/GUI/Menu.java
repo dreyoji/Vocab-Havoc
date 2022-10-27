@@ -1,20 +1,15 @@
 package GUI;
 
-import javax.swing.JButton;
-
 /**
  *
  * @author Arjay
  */
 public class Menu extends javax.swing.JFrame {
 
-    String typegame;
-    
-    public String getTypegame() {
-        return typegame;
+    public Menu() {
+        initComponents();
     }
-
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -67,6 +62,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/leadboard.png"))); // NOI18N
         jButton4.setBorder(null);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 580, 110, 100));
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/info.png"))); // NOI18N
@@ -80,6 +80,11 @@ public class Menu extends javax.swing.JFrame {
 
         jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/exit.png"))); // NOI18N
         jButton6.setBorder(null);
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 580, 90, 100));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mainbg.png"))); // NOI18N
@@ -98,17 +103,22 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void gameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gameActionPerformed
-        Object source = evt.getSource();
-        
-        if(source == jButton1) typegame = "Frenzy";
-        if(source == jButton2) typegame = "Zen";
-        else 
-        typegame = "Time Attack";
-        
         this.dispose();
         Game game = new Game();
         game.setVisible(true);
     }//GEN-LAST:event_gameActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Leaderboard Lead = new Leaderboard();
+        Lead.setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments
