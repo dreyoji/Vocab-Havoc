@@ -33,6 +33,18 @@ public class Leaderboard extends javax.swing.JFrame {
         Frenzy2 = new javax.swing.JLabel();
         Leaderboard = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -133,6 +145,42 @@ public class Leaderboard extends javax.swing.JFrame {
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Background.png"))); // NOI18N
         getContentPane().add(Background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
+        jMenu1.setText("Settings");
+
+        jMenu3.setText("Show");
+
+        jMenuItem1.setText("Frenzy");
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem2.setText("Zen");
+        jMenu3.add(jMenuItem2);
+
+        jMenuItem3.setText("Time Attack");
+        jMenu3.add(jMenuItem3);
+
+        jMenu1.add(jMenu3);
+
+        jMenu4.setText("Reset");
+
+        jMenuItem4.setText("Frenzy");
+        jMenu4.add(jMenuItem4);
+
+        jMenuItem5.setText("Zen");
+        jMenu4.add(jMenuItem5);
+
+        jMenuItem6.setText("Time Attack");
+        jMenu4.add(jMenuItem6);
+
+        jMenu1.add(jMenu4);
+        jMenu1.add(jSeparator1);
+
+        jMenuItem7.setText("Exit");
+        jMenu1.add(jMenuItem7);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -177,9 +225,21 @@ public class Leaderboard extends javax.swing.JFrame {
     private javax.swing.JLabel Frenzy1;
     private javax.swing.JLabel Frenzy2;
     private javax.swing.JLabel Leaderboard;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
