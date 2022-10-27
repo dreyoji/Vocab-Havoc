@@ -1,30 +1,31 @@
 package GUI;
 
-import GUI.*;
 import IOstream.*;
+import static IOstream.Ostream.saveScoreTimeAttack;
 import java.awt.Color;
-import static java.lang.Math.random;
 import java.util.ArrayList;
-import javax.swing.BorderFactory;
-import javax.swing.JLabel;
+import javax.swing.*;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  *
  * @author Ryoji
  */
-
-
 public class Game extends javax.swing.JFrame {
 
     /**
      * Creates new form Game
      */
-    int minimum = 0, max = Istream.getWords().length - 1;
+    int minimum = 0, max = Istream.getWords().length - 1, delay, num = 0, num2 = 0, checker = 0, recordTime = 0;
+    private static int buffer = 0;
+    private static int period = 1000;
+    Timer timer;
     String answer;
-    
+    Menu menu = new Menu();
+
     public Game() {
-        
-        int num = (int)(Math.random()*(max-minimum+1)+minimum);
+        int num = (int) (Math.random() * (max - minimum + 1) + minimum);
         answer = Istream.getWords()[num].toUpperCase();
         System.out.println(answer);
         initComponents();
@@ -59,7 +60,6 @@ public class Game extends javax.swing.JFrame {
         fifth3 = new javax.swing.JLabel();
         fifth4 = new javax.swing.JLabel();
         fifth5 = new javax.swing.JLabel();
-        type = new javax.swing.JLabel();
         min = new javax.swing.JLabel();
         sec = new javax.swing.JLabel();
         titles = new javax.swing.JLabel();
@@ -98,6 +98,11 @@ public class Game extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(500, 738));
         setPreferredSize(new java.awt.Dimension(500, 738));
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         first1.setBackground(new java.awt.Color(102, 102, 102));
@@ -225,17 +230,13 @@ public class Game extends javax.swing.JFrame {
         fifth5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 153, 153), 3, true));
         getContentPane().add(fifth5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 450, 50, 50));
 
-        type.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        type.setText("(0 / 5)");
-        getContentPane().add(type, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, -1, -1));
-
         min.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        min.setText("00 :");
-        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, -1));
+        min.setText("00 ");
+        getContentPane().add(min, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 60, -1, 30));
 
         sec.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         sec.setText("00");
-        getContentPane().add(sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, -1));
+        getContentPane().add(sec, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, -1, 30));
 
         titles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/FrenzyTitle.png"))); // NOI18N
         getContentPane().add(titles, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 430, 118));
@@ -434,7 +435,7 @@ public class Game extends javax.swing.JFrame {
             .addGap(0, 494, Short.MAX_VALUE)
             .addGroup(keyboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(keyboardLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 27, Short.MAX_VALUE)
                     .addGroup(keyboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(keyboardLayout.createSequentialGroup()
                             .addComponent(A)
@@ -489,7 +490,7 @@ public class Game extends javax.swing.JFrame {
                             .addComponent(Y)
                             .addGap(10, 10, 10)
                             .addComponent(Z)))
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 27, Short.MAX_VALUE)))
         );
         keyboardLayout.setVerticalGroup(
             keyboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,43 +543,51 @@ public class Game extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * @param args the command line arguments
+     */
+
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        this.dispose();
+        menu.setVisible(true);
+    }//GEN-LAST:event_ExitActionPerformed
+
     int mouseClickCount = 0;
     String guess = "";
     private void LetterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LetterMouseClicked
         Object source = evt.getSource();
-        
-        
+
         ArrayList<JLabel> boxes = new ArrayList<JLabel>();
         boxes.add(first1);
         boxes.add(first2);
         boxes.add(first3);
         boxes.add(first4);
         boxes.add(first5);
-        
+
         boxes.add(second1);
         boxes.add(second2);
         boxes.add(second3);
         boxes.add(second4);
         boxes.add(second5);
-        
+
         boxes.add(third1);
         boxes.add(third2);
         boxes.add(third3);
         boxes.add(third4);
         boxes.add(third5);
-        
+
         boxes.add(fourth1);
         boxes.add(fourth2);
         boxes.add(fourth3);
         boxes.add(fourth4);
         boxes.add(fourth5);
-        
+
         boxes.add(fifth1);
         boxes.add(fifth2);
         boxes.add(fifth3);
         boxes.add(fifth4);
         boxes.add(fifth5);
-        
+
         ArrayList<String> letters = new ArrayList<String>();
         letters.add("  A");
         letters.add("  B");
@@ -606,7 +615,7 @@ public class Game extends javax.swing.JFrame {
         letters.add("  X");
         letters.add("  Y");
         letters.add("  Z");
-        
+
         ArrayList<Object> sources = new ArrayList<Object>();
         sources.add(A);
         sources.add(B);
@@ -634,62 +643,58 @@ public class Game extends javax.swing.JFrame {
         sources.add(X);
         sources.add(Y);
         sources.add(Z);
-        
-        
+
         int boxPerRow = 5;
         int rowCount = 5;
         int currentRow = mouseClickCount / 5;
-        
+
         for (int i = currentRow * boxPerRow; i < boxes.size() - (20 - currentRow * boxPerRow); i += boxPerRow) {
             if (boxes.get(i).getText().equals("")) {
                 for (int j = 0; j < 26; j++) {
                     if (source == sources.get(j)) {
                         boxes.get(i).setText(letters.get(j));
-                        guess+= letters.get(j);
+                        guess += letters.get(j);
                     }
                 }
-                
-            } else if (boxes.get(i+1).getText() == "") {
+
+            } else if (boxes.get(i + 1).getText() == "") {
                 for (int j = 0; j < 26; j++) {
                     if (source == sources.get(j)) {
-                        boxes.get(i+1).setText(letters.get(j));
-                        guess+= letters.get(j);
+                        boxes.get(i + 1).setText(letters.get(j));
+                        guess += letters.get(j);
                     }
                 }
-                
-            } else if (boxes.get(i+2).getText() == "") {
-               for (int j = 0; j < 26; j++) {
-                    if (source == sources.get(j)) {
-                        boxes.get(i+2).setText(letters.get(j));
-                        guess+= letters.get(j);
-                    }
-                }
-                
-            } else if (boxes.get(i+3).getText() == "") {
+
+            } else if (boxes.get(i + 2).getText() == "") {
                 for (int j = 0; j < 26; j++) {
                     if (source == sources.get(j)) {
-                        boxes.get(i+3).setText(letters.get(j));
-                        guess+= letters.get(j);
+                        boxes.get(i + 2).setText(letters.get(j));
+                        guess += letters.get(j);
                     }
                 }
-                
-            } else if (boxes.get(i+4).getText() == "") {
+
+            } else if (boxes.get(i + 3).getText() == "") {
                 for (int j = 0; j < 26; j++) {
                     if (source == sources.get(j)) {
-                        boxes.get(i+4).setText(letters.get(j));
-                        guess+= letters.get(j);
-                        
+                        boxes.get(i + 3).setText(letters.get(j));
+                        guess += letters.get(j);
                     }
-                }                
+                }
+
+            } else if (boxes.get(i + 4).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i + 4).setText(letters.get(j));
+                        guess += letters.get(j);
+
+                    }
+                }
             }
-            
-            
+
         }
 
         mouseClickCount++;
 
-        
-        
         // if guess complete
         if (mouseClickCount % 5 == 0) {
 
@@ -697,7 +702,7 @@ public class Game extends javax.swing.JFrame {
             // remove whitespace
             guess = guess.replace("  ", "");
             System.out.println(guess);
-            
+
             // check if letter is in answer for every letter
             boolean[] yellow = new boolean[5];
             for (int i = 0; i < 5; i++) {
@@ -707,7 +712,7 @@ public class Game extends javax.swing.JFrame {
                     yellow[i] = false;
                 }
             }
-            
+
             // chekc for green
             boolean[] green = new boolean[5];
             for (int i = 0; i < 5; i++) {
@@ -717,26 +722,53 @@ public class Game extends javax.swing.JFrame {
                     green[i] = false;
                 }
             }
-            
             // change colors :)
             for (int i = 0; i < 5; i++) {
                 Color boxColor = Color.RED; // default
                 int boxIndex = (currentRow * 5) + i;
                 if (green[i]) {
                     boxColor = Color.GREEN;
-                }
-                else if (yellow[i]) {
+                } else if (yellow[i]) {
                     boxColor = Color.YELLOW;
                 }
 
                 boxes.get(boxIndex).setBorder(BorderFactory.createLineBorder(boxColor, 5));
             }
-            
+
+            for (int i = 0; i < 5; i++) {
+                if (green[i]) {
+                    checker++;
+                }
+            }
+
+            if (checker == 5) {
+                recordTime = (num2 * 60) + num;
+                JOptionPane.showMessageDialog(null, "You got the right word!\n " + answer, "Congratulations", JOptionPane.INFORMATION_MESSAGE);
+                String name = JOptionPane.showInputDialog("Please enter your name: ");
+                saveScoreTimeAttack(name, recordTime);
+                
+                this.dispose();
+                menu.setVisible(true);
+                    
+            }
+
             guess = "";
+
         }
 
 
     }//GEN-LAST:event_LetterMouseClicked
+
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        go();
+    }//GEN-LAST:event_formWindowActivated
+
+    public void go() {
+        TimerTask myTask = new MyTimerTask(this);
+        timer = new Timer();
+        timer.schedule(myTask, buffer, period);
+
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -827,6 +859,22 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JLabel third4;
     private javax.swing.JLabel third5;
     private javax.swing.JLabel titles;
-    private javax.swing.JLabel type;
     // End of variables declaration//GEN-END:variables
+
+    public JLabel getSec() {
+        return sec;
+    }
+
+    public void setSec(JLabel sec) {
+        this.sec = sec;
+    }
+
+    public JLabel getMin() {
+        return min;
+    }
+
+    public void setMin(JLabel min) {
+        this.min = min;
+    }
+
 }
