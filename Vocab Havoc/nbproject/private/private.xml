@@ -3,11 +3,19 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/D:/GameProject/Vocab-Havoc/Vocab%20Havoc/src/GUI/Menu.java</file>
             <file>file:/D:/GameProject/Vocab-Havoc/Vocab%20Havoc/src/GUI/Game.java</file>
             <file>file:/D:/GameProject/Vocab-Havoc/Vocab%20Havoc/src/GUI/Leaderboard.java</file>
             <file>file:/D:/GameProject/Vocab-Havoc/Vocab%20Havoc/src/GUI/Information2.java</file>
             <file>file:/D:/GameProject/Vocab-Havoc/Vocab%20Havoc/src/GUI/Information1.java</file>
+=======
+            <file>file:/D:/Github%20Repositories/Vocab-Havoc/Vocab%20Havoc/src/GUI/Game.java</file>
+            <file>file:/D:/Github%20Repositories/Vocab-Havoc/Vocab%20Havoc/src/GUI/Menu.java</file>
+            <file>file:/D:/Github%20Repositories/Vocab-Havoc/Vocab%20Havoc/src/GUI/Information2.java</file>
+            <file>file:/D:/Github%20Repositories/Vocab-Havoc/Vocab%20Havoc/src/GUI/Information1.java</file>
+            <file>file:/D:/Github%20Repositories/Vocab-Havoc/Vocab%20Havoc/src/GUI/Leaderboard.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
