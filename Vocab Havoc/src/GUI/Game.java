@@ -16,22 +16,17 @@ import javax.swing.JLabel;
 
 public class Game extends javax.swing.JFrame {
 
-<<<<<<< Updated upstream
     /**
      * Creates new form Game
      */
-    public Game() {
-=======
     int minimum = 0, max = Istream.getWords().length - 1;
     String answer;
-    
     
     public Game() {
         
         int num = (int)(Math.random()*(max-minimum+1)+minimum);
         answer = Istream.getWords()[num].toUpperCase();
         System.out.println(answer);
->>>>>>> Stashed changes
         initComponents();
     }
 
@@ -557,11 +552,9 @@ public class Game extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< Updated upstream
     /**
      * @param args the command line arguments
      */
-=======
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ExitActionPerformed
@@ -762,7 +755,6 @@ public class Game extends javax.swing.JFrame {
 
     }//GEN-LAST:event_LetterMouseClicked
 
->>>>>>> Stashed changes
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
