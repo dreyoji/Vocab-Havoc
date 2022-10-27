@@ -89,16 +89,6 @@ System.out.println(score1[0]); // NullPointerException
 ```
 ### `getWords()`
 * returns the entire word list
-* PARAMETERS:
-	* `int scorePosition`
-		* the "position" of the score in the leaderboard STARTING FROM 1 (hindi 0!!!!!!)
-		* pang ilan sya sa list?
-	* `String mode`
-		* the game mode of the desired score
-		* the only valid values are `"FRENZY"` and `"TIME ATTACK"` (not case sensitive)
-* RETURN VALUE
-		- returns a `String[]` containing all the words in the word list
-		- if for whatever reason list retrieval fails, the method returns `null`		
 * EXAMPLE:
 ```java
 String[] words = getWords();
