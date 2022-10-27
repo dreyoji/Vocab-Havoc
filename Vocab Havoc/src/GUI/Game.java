@@ -1,7 +1,12 @@
 package GUI;
 
-import GUI.Menu;
-import static IOstream.Istream.getWords;
+import GUI.*;
+import IOstream.*;
+import java.awt.Color;
+import static java.lang.Math.random;
+import java.util.ArrayList;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 
 /**
  *
@@ -11,13 +16,22 @@ import static IOstream.Istream.getWords;
 
 public class Game extends javax.swing.JFrame {
 
-    static int seconds = 0;
-    static int minutes = 0;
-    static boolean state = true;
-
+<<<<<<< Updated upstream
+    /**
+     * Creates new form Game
+     */
     public Game() {
-        System.out.println(getWords());
+=======
+    int minimum = 0, max = Istream.getWords().length - 1;
+    String answer;
+    
+    
+    public Game() {
         
+        int num = (int)(Math.random()*(max-minimum+1)+minimum);
+        answer = Istream.getWords()[num].toUpperCase();
+        System.out.println(answer);
+>>>>>>> Stashed changes
         initComponents();
     }
 
@@ -543,162 +557,212 @@ public class Game extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
+    /**
+     * @param args the command line arguments
+     */
+=======
     private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_ExitActionPerformed
 
+    int mouseClickCount = 0;
+    String guess = "";
     private void LetterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LetterMouseClicked
         Object source = evt.getSource();
-      
-        if (first1.getText() == "") {
-            if(source == A) first1.setText("  A");
-            if(source == B) first1.setText("  B");
-            if(source == C) first1.setText("  C");
-            if(source == D) first1.setText("  D");
-            if(source == E) first1.setText("  E");
-            if(source == F) first1.setText("  F");
-            if(source == G) first1.setText("  G");
-            if(source == H) first1.setText("  H");
-            if(source == I) first1.setText("  I");
-            if(source == J) first1.setText("  J");
-            if(source == K) first1.setText("  K");
-            if(source == L) first1.setText("  L");
-            if(source == M) first1.setText("  M");
-            if(source == N) first1.setText("  N");
-            if(source == O) first1.setText("  O");
-            if(source == P) first1.setText("  P");
-            if(source == Q) first1.setText("  Q");
-            if(source == R) first1.setText("  R");
-            if(source == S) first1.setText("  S");
-            if(source == T) first1.setText("  T");
-            if(source == U) first1.setText("  U");
-            if(source == V) first1.setText("  V");
-            if(source == W) first1.setText("  W");
-            if(source == X) first1.setText("  X");
-            if(source == Y) first1.setText("  Y");
-            if(source == Z) first1.setText("  Z");
-        }
         
-        else if (first2.getText() == "") {
-            if(source == A) first2.setText("  A");
-            if(source == B) first2.setText("  B");
-            if(source == C) first2.setText("  C");
-            if(source == D) first2.setText("  D");
-            if(source == E) first2.setText("  E");
-            if(source == F) first2.setText("  F");
-            if(source == G) first2.setText("  G");
-            if(source == H) first2.setText("  H");
-            if(source == I) first2.setText("  I");
-            if(source == J) first2.setText("  J");
-            if(source == K) first2.setText("  K");
-            if(source == L) first2.setText("  L");
-            if(source == M) first2.setText("  M");
-            if(source == N) first2.setText("  N");
-            if(source == O) first2.setText("  O");
-            if(source == P) first2.setText("  P");
-            if(source == Q) first2.setText("  Q");
-            if(source == R) first2.setText("  R");
-            if(source == S) first2.setText("  S");
-            if(source == T) first2.setText("  T");
-            if(source == U) first2.setText("  U");
-            if(source == V) first2.setText("  V");
-            if(source == W) first2.setText("  W");
-            if(source == X) first2.setText("  X");
-            if(source == Y) first2.setText("  Y");
-            if(source == Z) first2.setText("  Z");
+        
+        ArrayList<JLabel> boxes = new ArrayList<JLabel>();
+        boxes.add(first1);
+        boxes.add(first2);
+        boxes.add(first3);
+        boxes.add(first4);
+        boxes.add(first5);
+        
+        boxes.add(second1);
+        boxes.add(second2);
+        boxes.add(second3);
+        boxes.add(second4);
+        boxes.add(second5);
+        
+        boxes.add(third1);
+        boxes.add(third2);
+        boxes.add(third3);
+        boxes.add(third4);
+        boxes.add(third5);
+        
+        boxes.add(fourth1);
+        boxes.add(fourth2);
+        boxes.add(fourth3);
+        boxes.add(fourth4);
+        boxes.add(fourth5);
+        
+        boxes.add(fifth1);
+        boxes.add(fifth2);
+        boxes.add(fifth3);
+        boxes.add(fifth4);
+        boxes.add(fifth5);
+        
+        ArrayList<String> letters = new ArrayList<String>();
+        letters.add("  A");
+        letters.add("  B");
+        letters.add("  C");
+        letters.add("  D");
+        letters.add("  E");
+        letters.add("  F");
+        letters.add("  G");
+        letters.add("  H");
+        letters.add("  I");
+        letters.add("  J");
+        letters.add("  K");
+        letters.add("  L");
+        letters.add("  M");
+        letters.add("  N");
+        letters.add("  O");
+        letters.add("  P");
+        letters.add("  Q");
+        letters.add("  R");
+        letters.add("  S");
+        letters.add("  T");
+        letters.add("  U");
+        letters.add("  V");
+        letters.add("  W");
+        letters.add("  X");
+        letters.add("  Y");
+        letters.add("  Z");
+        
+        ArrayList<Object> sources = new ArrayList<Object>();
+        sources.add(A);
+        sources.add(B);
+        sources.add(C);
+        sources.add(D);
+        sources.add(E);
+        sources.add(F);
+        sources.add(G);
+        sources.add(H);
+        sources.add(I);
+        sources.add(J);
+        sources.add(K);
+        sources.add(L);
+        sources.add(M);
+        sources.add(N);
+        sources.add(O);
+        sources.add(P);
+        sources.add(Q);
+        sources.add(R);
+        sources.add(S);
+        sources.add(T);
+        sources.add(U);
+        sources.add(V);
+        sources.add(W);
+        sources.add(X);
+        sources.add(Y);
+        sources.add(Z);
+        
+        
+        int boxPerRow = 5;
+        int rowCount = 5;
+        int currentRow = mouseClickCount / 5;
+        
+        for (int i = currentRow * boxPerRow; i < boxes.size() - (20 - currentRow * boxPerRow); i += boxPerRow) {
+            if (boxes.get(i).getText().equals("")) {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+1).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+1).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+2).getText() == "") {
+               for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+2).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+3).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+3).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+4).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+4).setText(letters.get(j));
+                        guess+= letters.get(j);
+                        
+                    }
+                }                
+            }
+            
+            
         }
 
-        else if (first3.getText() == "") {
-            if(source == A) first3.setText("  A");
-            if(source == B) first3.setText("  B");
-            if(source == C) first3.setText("  C");
-            if(source == D) first3.setText("  D");
-            if(source == E) first3.setText("  E");
-            if(source == F) first3.setText("  F");
-            if(source == G) first3.setText("  G");
-            if(source == H) first3.setText("  H");
-            if(source == I) first3.setText("  I");
-            if(source == J) first3.setText("  J");
-            if(source == K) first3.setText("  K");
-            if(source == L) first3.setText("  L");
-            if(source == M) first3.setText("  M");
-            if(source == N) first3.setText("  N");
-            if(source == O) first3.setText("  O");
-            if(source == P) first3.setText("  P");
-            if(source == Q) first3.setText("  Q");
-            if(source == R) first3.setText("  R");
-            if(source == S) first3.setText("  S");
-            if(source == T) first3.setText("  T");
-            if(source == U) first3.setText("  U");
-            if(source == V) first3.setText("  V");
-            if(source == W) first3.setText("  W");
-            if(source == X) first3.setText("  X");
-            if(source == Y) first3.setText("  Y");
-            if(source == Z) first3.setText("  Z");
-        }            
+        mouseClickCount++;
 
-        else if (first4.getText() == "") {
-            if(source == A) first4.setText("  A");
-            if(source == B) first4.setText("  B");
-            if(source == C) first4.setText("  C");
-            if(source == D) first4.setText("  D");
-            if(source == E) first4.setText("  E");
-            if(source == F) first4.setText("  F");
-            if(source == G) first4.setText("  G");
-            if(source == H) first4.setText("  H");
-            if(source == I) first4.setText("  I");
-            if(source == J) first4.setText("  J");
-            if(source == K) first4.setText("  K");
-            if(source == L) first4.setText("  L");
-            if(source == M) first4.setText("  M");
-            if(source == N) first4.setText("  N");
-            if(source == O) first4.setText("  O");
-            if(source == P) first4.setText("  P");
-            if(source == Q) first4.setText("  Q");
-            if(source == R) first4.setText("  R");
-            if(source == S) first4.setText("  S");
-            if(source == T) first4.setText("  T");
-            if(source == U) first4.setText("  U");
-            if(source == V) first4.setText("  V");
-            if(source == W) first4.setText("  W");
-            if(source == X) first4.setText("  X");
-            if(source == Y) first4.setText("  Y");
-            if(source == Z) first4.setText("  Z");
+        
+        
+        // if guess complete
+        if (mouseClickCount % 5 == 0) {
+
+            System.out.println(currentRow);
+            // remove whitespace
+            guess = guess.replace("  ", "");
+            System.out.println(guess);
+            
+            // check if letter is in answer for every letter
+            boolean[] yellow = new boolean[5];
+            for (int i = 0; i < 5; i++) {
+                if (answer.contains(Character.toString(guess.charAt(i)))) {
+                    yellow[i] = true;
+                } else {
+                    yellow[i] = false;
+                }
+            }
+            
+            // chekc for green
+            boolean[] green = new boolean[5];
+            for (int i = 0; i < 5; i++) {
+                if (guess.charAt(i) == answer.charAt(i)) {
+                    green[i] = true;
+                } else {
+                    green[i] = false;
+                }
+            }
+            
+            // change colors :)
+            for (int i = 0; i < 5; i++) {
+                Color boxColor = Color.RED; // default
+                int boxIndex = (currentRow * 5) + i;
+                if (green[i]) {
+                    boxColor = Color.GREEN;
+                }
+                else if (yellow[i]) {
+                    boxColor = Color.YELLOW;
+                }
+
+                boxes.get(boxIndex).setBorder(BorderFactory.createLineBorder(boxColor, 5));
+            }
+            
+            guess = "";
         }
-        
-        else if (first5.getText() == "") {
-            if(source == A) first5.setText("  A");
-            if(source == B) first5.setText("  B");
-            if(source == C) first5.setText("  C");
-            if(source == D) first5.setText("  D");
-            if(source == E) first5.setText("  E");
-            if(source == F) first5.setText("  F");
-            if(source == G) first5.setText("  G");
-            if(source == H) first5.setText("  H");
-            if(source == I) first5.setText("  I");
-            if(source == J) first5.setText("  J");
-            if(source == K) first5.setText("  K");
-            if(source == L) first5.setText("  L");
-            if(source == M) first5.setText("  M");
-            if(source == N) first5.setText("  N");
-            if(source == O) first5.setText("  O");
-            if(source == P) first5.setText("  P");
-            if(source == Q) first5.setText("  Q");
-            if(source == R) first5.setText("  R");
-            if(source == S) first5.setText("  S");
-            if(source == T) first5.setText("  T");
-            if(source == U) first5.setText("  U");
-            if(source == V) first5.setText("  V");
-            if(source == W) first5.setText("  W");
-            if(source == X) first5.setText("  X");
-            if(source == Y) first5.setText("  Y");
-            if(source == Z) first5.setText("  Z");
-        }        
-        
 
 
     }//GEN-LAST:event_LetterMouseClicked
 
+>>>>>>> Stashed changes
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
