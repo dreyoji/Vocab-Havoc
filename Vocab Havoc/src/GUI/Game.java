@@ -1,15 +1,38 @@
 package GUI;
 
+<<<<<<< Updated upstream
+=======
+import GUI.*;
+import IOstream.*;
+import java.awt.Color;
+import static java.lang.Math.random;
+import java.util.ArrayList;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
+
+>>>>>>> Stashed changes
 /**
  *
  * @author Ryoji
  */
 public class Game extends javax.swing.JFrame {
 
+<<<<<<< Updated upstream
     /**
      * Creates new form Game
      */
     public Game() {
+=======
+    int minimum = 0, max = Istream.getWords().length - 1;
+    String answer;
+    
+    
+    public Game() {
+        
+        int num = (int)(Math.random()*(max-minimum+1)+minimum);
+        answer = Istream.getWords()[num].toUpperCase();
+        System.out.println(answer);
+>>>>>>> Stashed changes
         initComponents();
     }
 
@@ -38,9 +61,212 @@ public class Game extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+<<<<<<< Updated upstream
     /**
      * @param args the command line arguments
      */
+=======
+    private void ExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ExitActionPerformed
+
+    int mouseClickCount = 0;
+    String guess = "";
+    private void LetterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LetterMouseClicked
+        Object source = evt.getSource();
+        
+        
+        ArrayList<JLabel> boxes = new ArrayList<JLabel>();
+        boxes.add(first1);
+        boxes.add(first2);
+        boxes.add(first3);
+        boxes.add(first4);
+        boxes.add(first5);
+        
+        boxes.add(second1);
+        boxes.add(second2);
+        boxes.add(second3);
+        boxes.add(second4);
+        boxes.add(second5);
+        
+        boxes.add(third1);
+        boxes.add(third2);
+        boxes.add(third3);
+        boxes.add(third4);
+        boxes.add(third5);
+        
+        boxes.add(fourth1);
+        boxes.add(fourth2);
+        boxes.add(fourth3);
+        boxes.add(fourth4);
+        boxes.add(fourth5);
+        
+        boxes.add(fifth1);
+        boxes.add(fifth2);
+        boxes.add(fifth3);
+        boxes.add(fifth4);
+        boxes.add(fifth5);
+        
+        ArrayList<String> letters = new ArrayList<String>();
+        letters.add("  A");
+        letters.add("  B");
+        letters.add("  C");
+        letters.add("  D");
+        letters.add("  E");
+        letters.add("  F");
+        letters.add("  G");
+        letters.add("  H");
+        letters.add("  I");
+        letters.add("  J");
+        letters.add("  K");
+        letters.add("  L");
+        letters.add("  M");
+        letters.add("  N");
+        letters.add("  O");
+        letters.add("  P");
+        letters.add("  Q");
+        letters.add("  R");
+        letters.add("  S");
+        letters.add("  T");
+        letters.add("  U");
+        letters.add("  V");
+        letters.add("  W");
+        letters.add("  X");
+        letters.add("  Y");
+        letters.add("  Z");
+        
+        ArrayList<Object> sources = new ArrayList<Object>();
+        sources.add(A);
+        sources.add(B);
+        sources.add(C);
+        sources.add(D);
+        sources.add(E);
+        sources.add(F);
+        sources.add(G);
+        sources.add(H);
+        sources.add(I);
+        sources.add(J);
+        sources.add(K);
+        sources.add(L);
+        sources.add(M);
+        sources.add(N);
+        sources.add(O);
+        sources.add(P);
+        sources.add(Q);
+        sources.add(R);
+        sources.add(S);
+        sources.add(T);
+        sources.add(U);
+        sources.add(V);
+        sources.add(W);
+        sources.add(X);
+        sources.add(Y);
+        sources.add(Z);
+        
+        
+        int boxPerRow = 5;
+        int rowCount = 5;
+        int currentRow = mouseClickCount / 5;
+        
+        for (int i = currentRow * boxPerRow; i < boxes.size() - (20 - currentRow * boxPerRow); i += boxPerRow) {
+            if (boxes.get(i).getText().equals("")) {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+1).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+1).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+2).getText() == "") {
+               for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+2).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+3).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+3).setText(letters.get(j));
+                        guess+= letters.get(j);
+                    }
+                }
+                
+            } else if (boxes.get(i+4).getText() == "") {
+                for (int j = 0; j < 26; j++) {
+                    if (source == sources.get(j)) {
+                        boxes.get(i+4).setText(letters.get(j));
+                        guess+= letters.get(j);
+                        
+                    }
+                }                
+            }
+            
+            
+        }
+
+        mouseClickCount++;
+
+        
+        
+        // if guess complete
+        if (mouseClickCount % 5 == 0) {
+
+            System.out.println(currentRow);
+            // remove whitespace
+            guess = guess.replace("  ", "");
+            System.out.println(guess);
+            
+            // check if letter is in answer for every letter
+            boolean[] yellow = new boolean[5];
+            for (int i = 0; i < 5; i++) {
+                if (answer.contains(Character.toString(guess.charAt(i)))) {
+                    yellow[i] = true;
+                } else {
+                    yellow[i] = false;
+                }
+            }
+            
+            // chekc for green
+            boolean[] green = new boolean[5];
+            for (int i = 0; i < 5; i++) {
+                if (guess.charAt(i) == answer.charAt(i)) {
+                    green[i] = true;
+                } else {
+                    green[i] = false;
+                }
+            }
+            
+            // change colors :)
+            for (int i = 0; i < 5; i++) {
+                Color boxColor = Color.RED; // default
+                int boxIndex = (currentRow * 5) + i;
+                if (green[i]) {
+                    boxColor = Color.GREEN;
+                }
+                else if (yellow[i]) {
+                    boxColor = Color.YELLOW;
+                }
+
+                boxes.get(boxIndex).setBorder(BorderFactory.createLineBorder(boxColor, 5));
+            }
+            
+            guess = "";
+        }
+
+
+    }//GEN-LAST:event_LetterMouseClicked
+
+>>>>>>> Stashed changes
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
