@@ -67,10 +67,10 @@ public class Information2 extends javax.swing.JFrame {
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 20, 20));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info2.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info1.png"))); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info3.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info2.png"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, -1, 70));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Information.png"))); // NOI18N
@@ -126,19 +126,19 @@ public class Information2 extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Lucida Console", 1, 28)); // NOI18N
         jLabel8.setText("No time pressure! ");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jLabel9.setText("and cautious on choosing a letter!");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 450, -1, -1));
+        jLabel9.setText("Try to guess as much as possibble.");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info1.png"))); // NOI18N
         jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 20, 20));
 
         jLabel10.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jLabel10.setText("You have limited time! Be fast");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 420, -1, -1));
+        jLabel10.setText("You will be given 5 words in each round!");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Play.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -147,7 +147,7 @@ public class Information2 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 530, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mainbg.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 700));
