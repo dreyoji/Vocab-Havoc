@@ -24,12 +24,9 @@ public class Leaderboard extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         Frenzy1 = new javax.swing.JLabel();
-        Frenzy = new javax.swing.JLabel();
         Frenzy2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         Leaderboard = new javax.swing.JLabel();
@@ -37,7 +34,6 @@ public class Leaderboard extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu2 = new javax.swing.JMenu();
         jMenu5 = new javax.swing.JMenu();
-        jMenuItem8 = new javax.swing.JMenuItem();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem11 = new javax.swing.JMenuItem();
@@ -45,13 +41,13 @@ public class Leaderboard extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem7 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Vocab Havoc");
@@ -59,19 +55,19 @@ public class Leaderboard extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Ranking", "Name", "Score", "Time"
+                "Name", "Score", "Time"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -80,48 +76,23 @@ public class Leaderboard extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 530, 440, 120));
-
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Ranking", "Name", "Score", "Time"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane2.setViewportView(jTable2);
-
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 440, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 440, 230));
 
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Ranking", "Name", "Score", "Time"
+                "Name", "Score", "Time"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -130,26 +101,27 @@ public class Leaderboard extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jTable3);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 440, 120));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 440, 230));
 
         Frenzy1.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         Frenzy1.setForeground(new java.awt.Color(204, 51, 255));
         Frenzy1.setText("Time Attack");
-        getContentPane().add(Frenzy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, -1, -1));
-
-        Frenzy.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
-        Frenzy.setForeground(new java.awt.Color(255, 204, 102));
-        Frenzy.setText("Frenzy");
-        getContentPane().add(Frenzy, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, -1, -1));
+        getContentPane().add(Frenzy1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 380, -1, -1));
 
         Frenzy2.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         Frenzy2.setForeground(new java.awt.Color(102, 204, 255));
         Frenzy2.setText("Zen");
-        getContentPane().add(Frenzy2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, -1, -1));
+        getContentPane().add(Frenzy2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         jButton1.setText("<");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, -1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 40, 80));
 
         Leaderboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LeaderTitle.png"))); // NOI18N
         getContentPane().add(Leaderboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -160,9 +132,6 @@ public class Leaderboard extends javax.swing.JFrame {
         jMenu2.setText("Home");
 
         jMenu5.setText("Play");
-
-        jMenuItem8.setText("Frenzy");
-        jMenu5.add(jMenuItem8);
 
         jMenuItem9.setText("Zen");
         jMenu5.add(jMenuItem9);
@@ -190,9 +159,6 @@ public class Leaderboard extends javax.swing.JFrame {
 
         jMenu3.setText("Show");
 
-        jMenuItem1.setText("Frenzy");
-        jMenu3.add(jMenuItem1);
-
         jMenuItem2.setText("Zen");
         jMenu3.add(jMenuItem2);
 
@@ -203,9 +169,6 @@ public class Leaderboard extends javax.swing.JFrame {
 
         jMenu4.setText("Reset");
 
-        jMenuItem4.setText("Frenzy");
-        jMenu4.add(jMenuItem4);
-
         jMenuItem5.setText("Zen");
         jMenu4.add(jMenuItem5);
 
@@ -213,6 +176,10 @@ public class Leaderboard extends javax.swing.JFrame {
         jMenu4.add(jMenuItem6);
 
         jMenu1.add(jMenu4);
+        jMenu1.add(jSeparator1);
+
+        jMenuItem7.setText("Save");
+        jMenu1.add(jMenuItem7);
 
         jMenuBar1.add(jMenu1);
 
@@ -226,6 +193,10 @@ public class Leaderboard extends javax.swing.JFrame {
         Information1 Info = new Information1();
         Info.setVisible(true);
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,7 +235,6 @@ public class Leaderboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
-    private javax.swing.JLabel Frenzy;
     private javax.swing.JLabel Frenzy1;
     private javax.swing.JLabel Frenzy2;
     private javax.swing.JLabel Leaderboard;
@@ -275,23 +245,20 @@ public class Leaderboard extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
 }

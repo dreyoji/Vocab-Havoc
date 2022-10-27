@@ -29,7 +29,6 @@ public class Information2 extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -45,8 +44,6 @@ public class Information2 extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -70,14 +67,11 @@ public class Information2 extends javax.swing.JFrame {
         jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 20, 20));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info1.png"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, -1, 80));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info1.png"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info2.png"))); // NOI18N
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info3.png"))); // NOI18N
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, 70));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info2.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, -1, 70));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Information.png"))); // NOI18N
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 80));
@@ -130,29 +124,21 @@ public class Information2 extends javax.swing.JFrame {
         jLabel22.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 20, 20));
 
-        jLabel6.setFont(new java.awt.Font("Lucida Console", 1, 19)); // NOI18N
-        jLabel6.setText("Try to guess as much as possibble");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Lucida Console", 1, 19)); // NOI18N
-        jLabel7.setText("You will be given 5 words in each round!");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
-
-        jLabel8.setFont(new java.awt.Font("Lucida Console", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Lucida Console", 1, 28)); // NOI18N
         jLabel8.setText("No time pressure! ");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 380, -1, -1));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 410, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jLabel9.setText("and cautious on choosing a letter!");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, -1, -1));
+        jLabel9.setText("Try to guess as much as possibble.");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/Info1.png"))); // NOI18N
         jLabel26.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 20, 20));
 
         jLabel10.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
-        jLabel10.setText("You have limited time! Be fast");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 500, -1, -1));
+        jLabel10.setText("You will be given 5 words in each round!");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Play.png"))); // NOI18N
         jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -161,7 +147,7 @@ public class Information2 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 570, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Resources/mainbg.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 700));
@@ -224,7 +210,6 @@ public class Information2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -235,8 +220,6 @@ public class Information2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
